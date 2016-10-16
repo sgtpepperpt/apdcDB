@@ -1,0 +1,13 @@
+t3
+MANUAL_QUERY		1		98.9511013031
+select 1 from dual;
+MANUAL_QUERY		1		96.803188324
+select 1 from dual;
+MANUAL_QUERY		1		100.121974945
+select 1 from dual;
+MANUAL_QUERY		1		100.255012512
+select 1 from dual;
+MANUAL_QUERY		1		99.0948677063
+select 1 from dual;
+MANUAL_QUERY		1		103.940010071
+select 1 from dual;

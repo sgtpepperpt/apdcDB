@@ -1,0 +1,180 @@
+TEST 0
+Uploading; repository size 1; took 2138ms.
+Indexing; repository size 1; took 44ms.
+Search for img 0; repository size 1; took 1789ms.
+Uploading; repository size 5; took 4824ms.
+Indexing; repository size 5; took 43ms.
+Search for img 2; repository size 5; took 760ms.
+Uploading; repository size 10; took 8538ms.
+Indexing; repository size 10; took 46ms.
+Search for img 3; repository size 10; took 685ms.
+Uploading; repository size 50; took 42566ms.
+Indexing; repository size 50; took 44ms.
+Search for img 8; repository size 50; took 1217ms.
+Uploading; repository size 100; took 84527ms.
+Indexing; repository size 100; took 49ms.
+Search for img 73; repository size 100; took 852ms.
+Uploading; repository size 500; took 423932ms.
+Indexing; repository size 500; took 47ms.
+Search for img 498; repository size 500; took 887ms.
+Uploading; repository size 1000; took 850125ms.
+Indexing; repository size 1000; took 44ms.
+Search for img 429; repository size 1000; took 609ms.
+-------------------------------------------------
+TEST 1
+Uploading; repository size 1; took 1848ms.
+Indexing; repository size 1; took 47ms.
+Search for img 0; repository size 1; took 1763ms.
+Uploading; repository size 5; took 4504ms.
+Indexing; repository size 5; took 49ms.
+Search for img 3; repository size 5; took 712ms.
+Uploading; repository size 10; took 8699ms.
+Indexing; repository size 10; took 50ms.
+Search for img 8; repository size 10; took 1210ms.
+Uploading; repository size 50; took 41412ms.
+Indexing; repository size 50; took 50ms.
+Search for img 32; repository size 50; took 656ms.
+Uploading; repository size 100; took 82918ms.
+Indexing; repository size 100; took 50ms.
+Search for img 39; repository size 100; took 718ms.
+Uploading; repository size 500; took 418010ms.
+Indexing; repository size 500; took 47ms.
+Search for img 240; repository size 500; took 1590ms.
+Uploading; repository size 1000; took 848238ms.
+Indexing; repository size 1000; took 47ms.
+Search for img 550; repository size 1000; took 883ms.
+-------------------------------------------------
+TEST 2
+Uploading; repository size 1; took 1687ms.
+Indexing; repository size 1; took 49ms.
+Search for img 0; repository size 1; took 1730ms.
+Uploading; repository size 5; took 4471ms.
+Indexing; repository size 5; took 46ms.
+Search for img 4; repository size 5; took 1133ms.
+Uploading; repository size 10; took 8365ms.
+Indexing; repository size 10; took 45ms.
+Search for img 1; repository size 10; took 923ms.
+Uploading; repository size 50; took 42539ms.
+Indexing; repository size 50; took 43ms.
+Search for img 45; repository size 50; took 1350ms.
+Uploading; repository size 100; took 82595ms.
+Indexing; repository size 100; took 51ms.
+Search for img 18; repository size 100; took 685ms.
+Uploading; repository size 500; took 420111ms.
+Indexing; repository size 500; took 45ms.
+Search for img 455; repository size 500; took 1203ms.
+Uploading; repository size 1000; took 850299ms.
+Indexing; repository size 1000; took 47ms.
+Search for img 491; repository size 1000; took 1166ms.
+-------------------------------------------------
+TEST 3
+Uploading; repository size 1; took 1604ms.
+Indexing; repository size 1; took 54ms.
+Search for img 0; repository size 1; took 1722ms.
+Uploading; repository size 5; took 4385ms.
+Indexing; repository size 5; took 47ms.
+Search for img 1; repository size 5; took 924ms.
+Uploading; repository size 10; took 8094ms.
+Indexing; repository size 10; took 50ms.
+Search for img 5; repository size 10; took 724ms.
+Uploading; repository size 50; took 40538ms.
+Indexing; repository size 50; took 43ms.
+Search for img 13; repository size 50; took 1307ms.
+Uploading; repository size 100; took 83378ms.
+Indexing; repository size 100; took 50ms.
+Search for img 78; repository size 100; took 660ms.
+Uploading; repository size 500; took 422171ms.
+Indexing; repository size 500; took 48ms.
+Search for img 494; repository size 500; took 563ms.
+Uploading; repository size 1000; took 848586ms.
+Indexing; repository size 1000; took 45ms.
+Search for img 585; repository size 1000; took 1693ms.
+-------------------------------------------------
+TEST 4
+Uploading; repository size 1; took 1669ms.
+Indexing; repository size 1; took 46ms.
+Search for img 0; repository size 1; took 1749ms.
+Uploading; repository size 5; took 4548ms.
+Indexing; repository size 5; took 48ms.
+Search for img 0; repository size 5; took 1697ms.
+Uploading; repository size 10; took 8733ms.
+Indexing; repository size 10; took 49ms.
+Search for img 9; repository size 10; took 1005ms.
+Uploading; repository size 50; took 41760ms.
+Indexing; repository size 50; took 53ms.
+Search for img 8; repository size 50; took 1233ms.
+Uploading; repository size 100; took 82781ms.
+Indexing; repository size 100; took 47ms.
+Search for img 56; repository size 100; took 665ms.
+Uploading; repository size 500; took 422438ms.
+Indexing; repository size 500; took 43ms.
+Search for img 494; repository size 500; took 541ms.
+Uploading; repository size 1000; took 849452ms.
+Indexing; repository size 1000; took 48ms.
+Search for img 400; repository size 1000; took 717ms.
+-------------------------------------------------
+TEST 5
+Uploading; repository size 1; took 1627ms.
+Indexing; repository size 1; took 46ms.
+Search for img 0; repository size 1; took 1720ms.
+Uploading; repository size 5; took 4680ms.
+Indexing; repository size 5; took 49ms.
+Search for img 0; repository size 5; took 1727ms.
+Uploading; repository size 10; took 8364ms.
+Indexing; repository size 10; took 49ms.
+Search for img 4; repository size 10; took 1149ms.
+Uploading; repository size 50; took 41729ms.
+Indexing; repository size 50; took 44ms.
+Search for img 45; repository size 50; took 1354ms.
+Uploading; repository size 100; took 83200ms.
+Indexing; repository size 100; took 42ms.
+Search for img 8; repository size 100; took 1267ms.
+Uploading; repository size 500; took 420529ms.
+Indexing; repository size 500; took 51ms.
+Search for img 15; repository size 500; took 1331ms.
+Uploading; repository size 1000; took 848917ms.
+Indexing; repository size 1000; took 47ms.
+Search for img 441; repository size 1000; took 1409ms.
+-------------------------------------------------
+TEST 6
+Uploading; repository size 1; took 1833ms.
+Indexing; repository size 1; took 45ms.
+Search for img 0; repository size 1; took 1757ms.
+Uploading; repository size 5; took 4629ms.
+Indexing; repository size 5; took 47ms.
+Search for img 1; repository size 5; took 914ms.
+Uploading; repository size 10; took 8340ms.
+Indexing; repository size 10; took 47ms.
+Search for img 8; repository size 10; took 1245ms.
+Uploading; repository size 50; took 42694ms.
+Indexing; repository size 50; took 47ms.
+Search for img 25; repository size 50; took 675ms.
+Uploading; repository size 100; took 82485ms.
+Indexing; repository size 100; took 46ms.
+Search for img 4; repository size 100; took 1180ms.
+Uploading; repository size 500; took 420560ms.
+Indexing; repository size 500; took 48ms.
+Search for img 12; repository size 500; took 1338ms.
+Uploading; repository size 1000; took 854385ms.
+Indexing; repository size 1000; took 55ms.
+Search for img 846; repository size 1000; took 655ms.
+-------------------------------------------------
+TEST 7
+Uploading; repository size 1; took 1696ms.
+Indexing; repository size 1; took 48ms.
+Search for img 0; repository size 1; took 1777ms.
+Uploading; repository size 5; took 4541ms.
+Indexing; repository size 5; took 55ms.
+Search for img 4; repository size 5; took 1172ms.
+Uploading; repository size 10; took 8488ms.
+Indexing; repository size 10; took 43ms.
+Search for img 0; repository size 10; took 1703ms.
+Uploading; repository size 50; took 42794ms.
+Indexing; repository size 50; took 53ms.
+Search for img 28; repository size 50; took 1002ms.
+Uploading; repository size 100; took 83010ms.
+Indexing; repository size 100; took 44ms.
+Search for img 38; repository size 100; took 1323ms.
+Uploading; repository size 500; took 417708ms.
+Indexing; repository size 500; took 48ms.
+Search for img 177; repository size 500; took 1092ms.

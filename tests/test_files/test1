@@ -1,0 +1,245 @@
+% Test script for the CryptDB Application Prototype
+% by Guilherme Borges, 2016 DI-FCT-UNL
+
+clean
+y
+fname t1
+
+ins a
+alb_0 art_0 1982 27
+alb_1 art_1 1978 44
+alb_2 art_2 1967 133
+alb_3 art_3 1984 115
+alb_4 art_4 1989 99
+alb_5 art_5 1971 41
+alb_6 art_6 1960 5
+alb_7 art_7 1959 71
+alb_8 art_8 1973 97
+alb_9 art_9 1989 147
+alb_10 art_10 1964 24
+alb_11 art_11 1976 101
+alb_12 art_12 1963 78
+alb_13 art_13 1969 34
+alb_14 art_14 1963 69
+alb_15 art_15 1977 130
+alb_16 art_16 1985 6
+alb_17 art_17 1984 110
+alb_18 art_18 1979 52
+alb_19 art_19 1962 46
+alb_20 art_20 1966 100
+alb_21 art_21 1950 32
+alb_22 art_22 1955 99
+alb_23 art_23 1983 35
+alb_24 art_24 1994 12
+alb_25 art_25 1995 125
+alb_26 art_26 1989 46
+alb_27 art_27 1985 74
+alb_28 art_28 1989 53
+alb_29 art_29 1985 71
+alb_30 art_30 1976 142
+alb_31 art_31 1997 110
+alb_32 art_32 1977 141
+alb_33 art_33 1952 83
+alb_34 art_34 1976 33
+alb_35 art_35 1956 114
+alb_36 art_36 1977 97
+alb_37 art_37 1997 12
+alb_38 art_38 1974 125
+alb_39 art_39 1958 93
+alb_40 art_40 1970 120
+alb_41 art_41 1990 88
+alb_42 art_42 1951 121
+alb_43 art_43 1956 49
+alb_44 art_44 1989 133
+alb_45 art_45 1964 80
+alb_46 art_46 1954 42
+alb_47 art_47 1992 30
+alb_48 art_48 1955 53
+alb_49 art_49 1963 145
+alb_50 art_50 1968 147
+alb_51 art_51 1973 126
+alb_52 art_52 1986 115
+alb_53 art_53 1992 80
+alb_54 art_54 1952 26
+alb_55 art_55 1970 135
+alb_56 art_56 1956 149
+alb_57 art_57 1998 41
+alb_58 art_58 1967 71
+alb_59 art_59 1967 45
+alb_60 art_60 2000 66
+alb_61 art_61 1972 9
+alb_62 art_62 1973 42
+alb_63 art_63 1961 46
+alb_64 art_64 1968 35
+alb_65 art_65 1950 122
+alb_66 art_66 1974 13
+alb_67 art_67 1958 126
+alb_68 art_68 1971 146
+alb_69 art_69 1975 110
+alb_70 art_70 1950 114
+alb_71 art_71 1978 93
+alb_72 art_72 1967 79
+alb_73 art_73 1966 120
+alb_74 art_74 1973 54
+alb_75 art_75 1981 52
+alb_76 art_76 1965 64
+alb_77 art_77 1969 44
+alb_78 art_78 1978 19
+alb_79 art_79 1960 40
+alb_80 art_80 1958 47
+alb_81 art_81 1959 122
+alb_82 art_82 1987 33
+alb_83 art_83 1965 119
+alb_84 art_84 1981 81
+alb_85 art_85 1991 94
+alb_86 art_86 1978 13
+alb_87 art_87 1984 98
+alb_88 art_88 1950 87
+alb_89 art_89 1995 99
+alb_90 art_90 1950 65
+alb_91 art_91 1967 126
+alb_92 art_92 1961 136
+alb_93 art_93 1953 150
+alb_94 art_94 1972 119
+alb_95 art_95 1963 55
+alb_96 art_96 1953 109
+alb_97 art_97 1975 52
+alb_98 art_98 1958 82
+albjoin_99 artj_99 1975 86
+.
+ins m
+mus_500 art_500 alb_500 82
+mus_501 art_501 alb_501 145
+mus_502 art_502 alb_502 103
+mus_503 art_503 alb_503 91
+mus_504 art_504 alb_504 169
+mus_505 art_505 alb_505 168
+mus_506 art_506 alb_506 99
+mus_507 art_507 alb_507 171
+mus_508 art_508 alb_508 20
+mus_509 art_509 alb_509 83
+mus_510 art_510 alb_510 69
+mus_511 art_511 alb_511 145
+mus_512 art_512 alb_512 44
+mus_513 art_513 alb_513 156
+mus_514 art_514 alb_514 67
+mus_515 art_515 alb_515 40
+mus_516 art_516 alb_516 145
+mus_517 art_517 alb_517 80
+mus_518 art_518 alb_518 104
+mus_519 art_519 alb_519 54
+mus_520 art_520 alb_520 143
+mus_521 art_521 alb_521 177
+mus_522 art_522 alb_522 105
+mus_523 art_523 alb_523 172
+mus_524 art_524 alb_524 77
+mus_525 art_525 alb_525 17
+mus_526 art_526 alb_526 34
+mus_527 art_527 alb_527 133
+mus_528 art_528 alb_528 14
+mus_529 art_529 alb_529 32
+mus_530 art_530 alb_530 100
+mus_531 art_531 alb_531 164
+mus_532 art_532 alb_532 146
+mus_533 art_533 alb_533 17
+mus_534 art_534 alb_534 98
+mus_535 art_535 alb_535 62
+mus_536 art_536 alb_536 133
+mus_537 art_537 alb_537 45
+mus_538 art_538 alb_538 131
+mus_539 art_539 alb_539 41
+mus_540 art_540 alb_540 32
+mus_541 art_541 alb_541 137
+mus_542 art_542 alb_542 12
+mus_543 art_543 alb_543 24
+mus_544 art_544 alb_544 129
+mus_545 art_545 alb_545 130
+mus_546 art_546 alb_546 175
+mus_547 art_547 alb_547 81
+mus_548 art_548 alb_548 97
+mus_549 art_549 alb_549 11
+mus_550 art_550 alb_550 111
+mus_551 art_551 alb_551 5
+mus_552 art_552 alb_552 46
+mus_553 art_553 alb_553 113
+mus_554 art_554 alb_554 122
+mus_555 art_555 alb_555 137
+mus_556 art_556 alb_556 29
+mus_557 art_557 alb_557 99
+mus_558 art_558 alb_558 41
+mus_559 art_559 alb_559 153
+mus_560 art_560 alb_560 22
+mus_561 art_561 alb_561 95
+mus_562 art_562 alb_562 136
+mus_563 art_563 alb_563 5
+mus_564 art_564 alb_564 131
+mus_565 art_565 alb_565 152
+mus_566 art_566 alb_566 72
+mus_567 art_567 alb_567 106
+mus_568 art_568 alb_568 129
+mus_569 art_569 alb_569 89
+mus_570 art_570 alb_570 39
+mus_571 art_571 alb_571 92
+mus_572 art_572 alb_572 108
+mus_573 art_573 alb_573 166
+mus_574 art_574 alb_574 159
+mus_575 art_575 alb_575 121
+mus_576 art_576 alb_576 88
+mus_577 art_577 alb_577 59
+mus_578 art_578 alb_578 5
+mus_579 art_579 alb_579 68
+mus_580 art_580 alb_580 44
+mus_581 art_581 alb_581 15
+mus_582 art_582 alb_582 42
+mus_583 art_583 alb_583 107
+mus_584 art_584 alb_584 52
+mus_585 art_585 alb_585 121
+mus_586 art_586 alb_586 71
+mus_587 art_587 alb_587 103
+mus_588 art_588 alb_588 109
+mus_589 art_589 alb_589 79
+mus_590 art_590 alb_590 111
+mus_591 art_591 alb_591 89
+mus_592 art_592 alb_592 136
+mus_593 art_593 alb_593 89
+mus_594 art_594 alb_594 97
+musj_595 artj_99 alb_join99 39
+musj_596 artj_99 alb_join99 116
+musj_597 artj_99 alb_join99 25
+musj_598 artj_99 alb_join99 21
+musj_599 artj_99 alb_join99 148
+.
+cons a
+cons m
+
+duration
+y
+
+order
+a
+
+order
+d
+
+duration
+y
+
+increment
+
+duration
+n
+albjoin_99
+artj_99
+
+join
+
+duration
+n
+albjoin_99
+artj_99
+
+increment
+
+cons a
+
+e

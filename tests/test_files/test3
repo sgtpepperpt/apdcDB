@@ -1,0 +1,21 @@
+% Test script for the CryptDB Application Prototype
+% by Guilherme Borges, 2016 DI-FCT-UNL
+
+fname t3
+
+sql
+select 1 from dual;
+sql
+select 1 from dual;
+sql
+select 1 from dual;
+sql
+select 1 from dual;
+sql
+select 1 from dual;
+sql
+select 1 from dual;
+
+exit
+
+
