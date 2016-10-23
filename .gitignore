@@ -1,15 +1,13 @@
-
-# Created by https://www.gitignore.io/api/c,c++,java,android,objective-c
 *~
 datasets
-docker
 google-cloud
 
 proxy/opencv*
 proxy/cryptdb
 server/cbir/Data/*
-server/cbir/opencv*
+server/cbir/opencv-3.0.0
 
+# Created by https://www.gitignore.io/api/c,c++,java,android,objective-c
 ### C ###
 # Prerequisites
 *.d
