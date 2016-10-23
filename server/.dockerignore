@@ -1,0 +1,6 @@
+cbir/Data/Server/MIE/*
+cbir/opencv-3.0.0
+libs/tpm/tpm-emulator-master/build
+libs/tpm/tpm-quote-tools-1.0.2/*.o
+libs/cbir/*.zip
+*~

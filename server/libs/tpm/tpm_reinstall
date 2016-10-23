@@ -1,0 +1,30 @@
+#!/bin/bash
+
+if [ "$EUID" -ne 0  ]
+then
+	echo "Pls root"
+	exit
+fi
+
+SERVER_PATH="/home/user/apdc/server/attestation_tpm"
+
+############### REMOVE ###############
+#remove quote tools
+cd $SERVER_PATH/tpm-quote-tools-1.0.2/ &&\
+sudo make uninstall &&\
+sudo make clean
+
+#remove trousers and companhia
+sudo apt-get remove -y libtspi* tpm-tools trousers &&\
+sudo apt-get autoremove && sudo apt-get autoclean && sudo apt-get update
+
+#remove tpm emulator
+cd $SERVER_PATH/tpm-emulator-master/ &&\
+cd build/ &&\
+sudo make uninstall &&\
+sudo make clean &&\
+cd .. &&\
+sudo rm -rf build
+
+############### INSTALL ###############
+

@@ -32,7 +32,7 @@
 
 
 //static const std::string homePath = "/Users/bernardo/";
-static const std::string homePath = "/home/pepper/apdc/server/cbir/";
+static const std::string homePath = getenv("HOME_DIR_CBIR") ? getenv("HOME_DIR_CBIR") : "/server/cbir/";
 static const int clusters = 1000;
 
 

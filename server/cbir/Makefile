@@ -59,7 +59,7 @@ paillier.debug : paillier.c
 	gcc -pthread -g -O0 -c paillier.c
 
 clean :
-	rm Server Main.o MIEServer.o MIEServerMT.o SSEServer.o ServerUtil.o CashServer.o PaillierCashServer.o paillier.o core
+	rm Server Main.o MIEServer.o MIEServerMT.o SSEServer.o ServerUtil.o CashServer.o PaillierCashServer.o paillier.o
 
 run : Server
 	LD_LIBRARY_PATH=/usr/local/opencv/opencv3.1/lib/:$$LD_LIBRARY_PATH ./Server $(RUN_ARGS) >teste.txt 2>&1 &

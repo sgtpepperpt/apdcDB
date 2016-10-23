@@ -6,6 +6,7 @@ import java.util.Random;
 
 import org.bouncycastle.jce.provider.BouncyCastleProvider;
 
+import attestation.AttestationModule;
 import cbir.ServerCBIR;
 
 public class Main {
@@ -65,18 +66,20 @@ public class Main {
 		}
 
 		Security.addProvider(new BouncyCastleProvider());
+		AttestationModule atm = new AttestationModule("172.17.0.1", 7868);
+		atm.verifyServers();
 		/*
 		 * Dispatcher d = new Dispatcher(isEncrypted, isCloud);
 		 * d.listenForRequests();
 		 */
-
+/*
 		PrintStream ps = new PrintStream("test");
 		for (int k = 0; k < 10; k++) {
 			ps.println("TEST " + k);
 			int[] vals = { 1, 5, 10, 50, 100, 500, 1000 };
 			for (int v : vals) {
 				System.out.println("test: " + k + "; repository size: " + v);
-				ServerCBIR s = new ServerCBIR(CLOUD_HOST, DEFAULT_SERVER_CBIR_PORT);
+				ServerCBIR s = new ServerCBIR("172.17.0.1", DEFAULT_SERVER_CBIR_PORT);
 				long start = System.currentTimeMillis();
 				for (int i = 0; i < v; i++)
 					s.uploadOne(i);
@@ -96,6 +99,6 @@ public class Main {
 			}
 			ps.println("-------------------------------------------------");
 		}
-		ps.close();
+		ps.close();*/
 	}
 }
