@@ -5,7 +5,8 @@ google-cloud
 proxy/opencv*
 proxy/cryptdb
 server/cbir/Data/*
-server/cbir/opencv-3.0.0
+server/libs/cbir/opencv-3.0.0
+server/libs/cbir/opencv-3.0.0.zip
 
 # Created by https://www.gitignore.io/api/c,c++,java,android,objective-c
 ### C ###
