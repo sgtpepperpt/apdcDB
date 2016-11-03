@@ -22,7 +22,6 @@ struct file_data{
 */
 int socks();
 std::vector<char> processQuoteRequest(std::string request);
-std::vector<char> readFile(std::string n);
 
 void read_PCR(TSS_HTPM hTPM, int pcr);
 int write_PCR(TSS_HTPM hTPM, int pcrToExtend, char* value);

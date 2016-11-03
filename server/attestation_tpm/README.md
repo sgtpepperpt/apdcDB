@@ -1,4 +1,5 @@
 #HOW TO INITIALIZE AND GENERATE QUOTES WITH TPM
+#THIS PART APPLIES TO THE TPM EMULATOR
 tpm_clear -z --force &&\
 tpm_setenable --enable --force &&\
 tpm_setactive --active

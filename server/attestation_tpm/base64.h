@@ -1,4 +1,11 @@
-#include <string>
+#ifndef _BASE64_H_
+#define _BASE64_H_
 
-std::string base64_encode(unsigned char const* , unsigned int len);
-std::string base64_decode(std::string const& s);
+#include <vector>
+#include <string>
+typedef unsigned char BYTE;
+
+std::string base64_encode(BYTE const* buf, unsigned int bufLen);
+std::vector<BYTE> base64_decode(std::string const&);
+
+#endif

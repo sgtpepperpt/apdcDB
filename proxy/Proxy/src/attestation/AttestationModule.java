@@ -10,6 +10,8 @@ import java.net.UnknownHostException;
 import java.util.Arrays;
 import java.util.Random;
 
+import javax.xml.bind.DatatypeConverter;
+
 import proxy.Main;
 import proxy.Util;
 
@@ -40,9 +42,10 @@ public class AttestationModule {
 		} while(buffer.length < 256);
 		
 		String pcr = new String(buffer).substring(0, 87);
-
+		String base64Quote = new String(Arrays.copyOfRange(buffer, 90, buffer.length));
+		
 		// write generated nonce and received quote to files
-		Util.writeFile(Main.TMP_DIR + "quote", Arrays.copyOfRange(buffer, 90, buffer.length));
+		Util.writeFile(Main.TMP_DIR + "quote", DatatypeConverter.parseBase64Binary(base64Quote));
 		Util.writeFile(Main.TMP_DIR + "pcrvals", pcr.getBytes());
 		Util.writeFile(Main.TMP_DIR + "nonce", nonce.getBytes());
 

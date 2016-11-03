@@ -166,8 +166,12 @@ int socks(){
     		result.push_back('\n');
     		
     		std::vector<char> quote = processQuoteRequest(request);
-    		for(int k = 0; k < quote.size(); k++)
-    			result.push_back(quote.at(k));    		
+    		int sz = quote.size();
+    		BYTE* buf = (unsigned char*)quote.data();
+    		string res = base64_encode(buf, sz);
+    		
+    		for(int k = 0; k < res.size(); k++)
+    			result.push_back(res.at(k));	
     	}
     	
     	/*cout<<"%%"<<endl<<endl<<"%%"<<endl<<result.size()<<endl;
@@ -188,19 +192,6 @@ int socks(){
     }
 	close(socket_desc);
     return 0;
-}
-
-//http://stackoverflow.com/questions/22059189/read-a-file-as-byte-array
-std::vector<char> readFile(string filename){
-	ifstream ifs(filename, ios::binary|ios::ate);
-    ifstream::pos_type pos = ifs.tellg();
-
-    std::vector<char>  result(pos);
-
-    ifs.seekg(0, ios::beg);
-    ifs.read(&result[0], pos);
-
-    return result;
 }
 
 std::vector<char> processQuoteRequest(string request){

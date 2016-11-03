@@ -66,7 +66,7 @@ public class Main {
 		}
 
 		Security.addProvider(new BouncyCastleProvider());
-		AttestationModule atm = new AttestationModule("172.17.0.1", 7868);
+		AttestationModule atm = new AttestationModule("localhost", 7868);
 		atm.verifyServers();
 		/*
 		 * Dispatcher d = new Dispatcher(isEncrypted, isCloud);
