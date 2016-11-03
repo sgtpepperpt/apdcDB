@@ -1,6 +1,7 @@
 #!/bin/bash
 
-#format: ./proxy.sh <proxy-address> <proxy-backend-to-mysql>
+#This script runs the CryptDB proxy
+#usage: ./proxy.sh <proxy-address> <proxy-backend-to-mysql>
 PROXY_IP=$1
 MYSQL_IP=$2
 
@@ -11,12 +12,12 @@ export CRYPTDB_PASS=FQ971bXn
 fuser -k 3307/tcp
 
 # now launch
-/home/pepper/apdc/proxy/cryptdb/bins/proxy-bin/bin/mysql-proxy	\
---plugins=proxy							\
---event-threads=4						\
---max-open-files=1024						\
---proxy-lua-script=$EDBDIR/mysqlproxy/wrapper.lua		\
---proxy-address=$PROXY_IP:3307					\
+$EDBDIR/bins/proxy-bin/bin/mysql-proxy				\
+--plugins=proxy										\
+--event-threads=4									\
+--max-open-files=1024								\
+--proxy-lua-script=$EDBDIR/mysqlproxy/wrapper.lua	\
+--proxy-address=$PROXY_IP:3307						\
 --proxy-backend-addresses=$MYSQL_IP:3306
 
 $SHELL

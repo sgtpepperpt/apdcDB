@@ -110,7 +110,7 @@ AUTOMAKE = ${SHELL} /home/pepper/apdc/server/libs/tpm/tpm-tools-1.3.3/missing --
 AWK = gawk
 CC = gcc
 CCDEPMODE = depmode=gcc3
-CFLAGS = -g -O2 -m64 -Wall -Werror -Wreturn-type -Wsign-compare
+CFLAGS = -Wno-unused-but-set-variable -m64 -Wall -Werror -Wreturn-type -Wsign-compare
 COPY = cp
 CPP = gcc -E
 CPPFLAGS = 

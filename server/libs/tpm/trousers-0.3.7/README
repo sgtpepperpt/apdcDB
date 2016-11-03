@@ -84,7 +84,7 @@ platform.  Here are some example instructions for ppc64:
 
   $ sh bootstrap.sh
   $ export PKG_CONFIG_PATH=/usr/lib64/pkgconfig
-  $ CFLAGS="-L/usr/lib64 -L/opt/gnome/lib64" LDFLAGS="-L/usr/lib64 \
+  $ CFLAGS="-L/usr/lib64 -L/opt/gnome/lib64 -Wno-unused-but-set-variable" LDFLAGS="-L/usr/lib64 \
            -L/opt/gnome/lib64" ./configure --libdir="/usr/local/lib64"
   $ make
   # make install

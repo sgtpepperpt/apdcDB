@@ -29,16 +29,16 @@ public class Main {
 	public static final String CLOUD_MYSQL_IP = "104.155.123.25";
 	public static final String CLOUD_HOST = "104.155.125.250";
 
-	public static final String CLIENT_DIR = "/home/pepper/apdc/client/";
+	public static final String PROXY_DIR = "/home/pepper/apdc/proxy/";
 	static final String DATASET_DIRECTORY = "/home/pepper/apdc/datasets/";
 
 	// attestation folder, containing trusted hashes and pubkey from tpm
-	public static final String DATA_DIR = CLIENT_DIR + "../proxy/attestation_tpm/data/";
+	public static final String DATA_DIR = PROXY_DIR + "attestation_tpm/data/";
 	public static final String TMP_DIR = DATA_DIR + "tmp/";
 
 	// location of iv files for cbir algorithm
-	public static final String IMG_KEY_FILE = CLIENT_DIR + "cbir/cbird.key";
-	public static final String IV_FILE = CLIENT_DIR + "cbir/iv";
+	public static final String IMG_KEY_FILE = PROXY_DIR + "cbir/cbird.key";
+	public static final String IV_FILE = PROXY_DIR + "cbir/iv";
 
 	public static final String PROXY_PORT = "3307";
 	public static final String MYSQL_PORT = "3306";
