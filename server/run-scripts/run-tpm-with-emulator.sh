@@ -6,7 +6,7 @@ then
 	exit
 fi
 
-cd attestation_tpm
+cd ../attestation_tpm
 
 #kill if running
 sudo rm -f /run/tpm/tpmd_socket:0

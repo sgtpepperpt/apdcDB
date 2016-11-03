@@ -23,8 +23,8 @@ A Docker image containing the server's components ready to use is also provided.
 For the **Attestation Module** you will need the following libraries (included):
 * [IBM's Software Trusted Module](http://ibmswtpm.sourceforge.net/)
 * [Trousers 0.3.7](https://sourceforge.net/projects/trousers/files/trousers/)
-* [TPM-tools 1.3.3](https://sourceforge.net/projects/trousers/files/tpm-tools/)
-* [TPM Quote Tools](https://sourceforge.net/projects/tpmquotetools/)
+* [TPM-Tools 1.3.3](https://sourceforge.net/projects/trousers/files/tpm-tools/)
+* [TPM Quote Tools 1.0.2](https://sourceforge.net/projects/tpmquotetools/)
 * ~~[TPM-Emulator](https://github.com/PeterHuewe/tpm-emulator)~~ _Note:_ Due to issues with the Docker deployment, we've deprecated this library in favour of IBM's. However, installation scripts and tips on TPM-Emulator's usage are included if you're interested.
 
 

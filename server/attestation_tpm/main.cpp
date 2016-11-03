@@ -18,8 +18,8 @@ using namespace std;
 
 const int DEFAULT_LISTENER_PORT = 7868;
 
-const string MYSQL_HASH_COMM	= "sha1sum /usr/bin/mysql";
-const string CBIR_HASH_COMM	= "sha1sum /home/pepper/apdc/server/cbir/* | sha1sum";
+const string MYSQL_HASH_COMM	= string("sha1sum ") + getenv("MYSQL_LOCATION");
+const string CBIR_HASH_COMM		= string("sha1sum ") + getenv("CBIR_LOCATION") + string("/* | sha1sum");
 
 int main(int argc,char **argv){
 	TSS_HCONTEXT	hContext;
@@ -46,7 +46,7 @@ int main(int argc,char **argv){
 	//chdir("/home/pepper/apdc/server/attestation_tpm");
 	
 	//if set, write pcr registers
-	if(argc == 2 && strcmp(argv[1], "-w") == 0){
+	if(argc > 1 && strcmp(argv[1], "-w") == 0){
 		//string mySQL_hash = split(read_command(MYSQL_HASH_COMM), ' ').at(0);
 		string cbir_hash = split(read_command(CBIR_HASH_COMM), ' ').at(0);
 	
@@ -170,7 +170,7 @@ int socks(){
     		BYTE* buf = (unsigned char*)quote.data();
     		string res = base64_encode(buf, sz);
     		
-    		for(int k = 0; k < res.size(); k++)
+    		for(unsigned int k = 0; k < res.size(); k++)
     			result.push_back(res.at(k));	
     	}
     	
@@ -179,7 +179,7 @@ int socks(){
     		cout << result.at(as);*/
     		
     	char * buffer = (char*) malloc(result.size() * sizeof(char));
-    	for(int i = 0; i < result.size(); i++)
+    	for(unsigned int i = 0; i < result.size(); i++)
     		buffer[i] = result.at(i);
     	
     	//answer to client

@@ -24,9 +24,22 @@ COPY cbir/ cbir/
 WORKDIR install-scripts
 #RUN sudo ./install-cbir.sh
 
-WORKDIR ..
-COPY attestation_tpm/ attestation_tpm/
+## TPM INSTALLATION ##
+#libs
+WORKDIR install-scripts/tpm-ibm-1.2
+RUN sudo ./1-install-tpm-server.sh
+RUN sudo ./2-install-trousers.sh
+RUN sudo ./3-tpm-first-setup.sh
 
-EXPOSE 9978
-EXPOSE 7868
+#dispatcher
+WORKDIR ../..
+COPY attestation_tpm/ attestation_tpm/
+WORKDIR install-scripts
+RUN sudo ./install-tpm.sh
+WORKDIR ..
+
+EXPOSE 9978 #cbir
+EXPOSE 7868 #attestation
+EXPOSE 3306 #mysql
+
 #ENTRYPOINT ./run_cbir.sh

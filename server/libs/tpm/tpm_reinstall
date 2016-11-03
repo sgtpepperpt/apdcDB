@@ -26,5 +26,3 @@ sudo make clean &&\
 cd .. &&\
 sudo rm -rf build
 
-############### INSTALL ###############
-
