@@ -7,11 +7,19 @@ Check for absolute paths in these installation scripts.
 ##Using a Docker image
 A Docker image containing the server's components ready to use is also provided. Simply create the image from the Dockerfile, and the server is ready to use.
 
+However, each time the server is run - and a new container is created - the TPM identity is reset and you will need to copy some attestation files to the proxy. This is done automatically by the _docker\_get\_files.sh_ script.
+
+Follow these instructions to run:
+
 **To build Docker image:**
 > docker build -t server .
 
 **To run:**
-> docker run -it -p 9978:9978 -p 7868:7868 _your-container-id_
+> ./docker\_run.sh _your-image-id_
+
+**To get the TPM files in the proxy:**
+> ./docker\_get\_files.sh
+Check, in the script, if the path is correct.
 
 ###Currently included
 - [x] CBIR server

@@ -13,5 +13,9 @@
 	<classpathentry kind="lib" path="/home/pepper/workspace-eclipse/Proxy/lib/mysql-connector-java-5.0.8-bin.jar"/>
 	<classpathentry kind="lib" path="/home/pepper/workspace-eclipse/Proxy/lib/bcprov-jdk15on-154.jar"/>
 	<classpathentry kind="lib" path="/home/pepper/apdc/proxy/opencv-2.4.10/build/bin/opencv-2410.jar"/>
+	<classpathentry kind="lib" path="/home/pepper/apdc/proxy/Proxy/lib/commons-configuration2-2.1.jar"/>
+	<classpathentry kind="lib" path="/home/pepper/apdc/proxy/Proxy/lib/commons-logging-1.2.jar"/>
+	<classpathentry kind="lib" path="/home/pepper/apdc/proxy/Proxy/lib/commons-beanutils-1.9.3.jar"/>
+	<classpathentry kind="lib" path="/home/pepper/apdc/proxy/Proxy/lib/commons-lang3-3.5.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

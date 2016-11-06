@@ -1,5 +1,5 @@
 tpm : main.cpp
-	g++ -std=c++11 main.cpp util.cpp base64.cpp -o dispatcher -ltspi -Wall
+	g++ main.cpp util.cpp base64.cpp -o dispatcher -std=c++11 -ltspi -Wall
 
 clean :
 	rm dispatcher

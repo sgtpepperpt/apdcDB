@@ -41,8 +41,8 @@ RUN sudo ./install-tpm.sh
 WORKDIR ..
 
 #cbir, attestation, mysql
-EXPOSE 9978:9978
-EXPOSE 7868:7868
+EXPOSE 9978
+EXPOSE 7868
 #EXPOSE 3306
 
 ENTRYPOINT ./run-server.sh
