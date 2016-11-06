@@ -19,6 +19,7 @@ Follow these instructions to run:
 
 **To get the TPM files in the proxy:**
 > ./docker\_get\_files.sh
+
 Check, in the script, if the path is correct.
 
 ###Currently included
