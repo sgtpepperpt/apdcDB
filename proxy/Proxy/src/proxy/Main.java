@@ -1,8 +1,16 @@
 package proxy;
 
+import java.io.PrintStream;
+import java.security.Security;
+import java.util.Random;
+
 import org.apache.commons.configuration2.Configuration;
 import org.apache.commons.configuration2.builder.fluent.Configurations;
 import org.apache.commons.configuration2.ex.ConfigurationException;
+import org.bouncycastle.jce.provider.BouncyCastleProvider;
+
+import attestation.AttestationModule;
+import cbir.ServerCBIR;
 
 public class Main {
 	static final int DEFAULT_PROXY_DISPATCHER_PORT = 5482;
@@ -59,15 +67,15 @@ public class Main {
 				break;
 			}
 		}
-readPropertiesFile("config.properties");/*
+//readPropertiesFile("config.properties");/*
 		Security.addProvider(new BouncyCastleProvider());
 		AttestationModule atm = new AttestationModule("localhost", 7868);
-		atm.verifyServers();*/
+		atm.verifyServers();
 		/*
 		 * Dispatcher d = new Dispatcher(isEncrypted, isCloud);
 		 * d.listenForRequests();
 		 */
-/*
+
 		PrintStream ps = new PrintStream("test");
 		for (int k = 0; k < 10; k++) {
 			ps.println("TEST " + k);
@@ -94,7 +102,7 @@ readPropertiesFile("config.properties");/*
 			}
 			ps.println("-------------------------------------------------");
 		}
-		ps.close();*/
+		ps.close();
 	}
 	
 	private static void readPropertiesFile(String file) {
