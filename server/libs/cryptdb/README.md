@@ -1,7 +1,7 @@
 # INSTALLATION INSTRUCTIONS FOR CRYPTDB ON A DBaaS SERVICE
-# by Guilherme Borges
-# July 2016
-# NOVA-LINCS FCT-UNL
+by Guilherme Borges  
+July 2016  
+NOVA-LINCS FCT-UNL  
 
 CryptDB needs, on the server side (DBMS), two different libraries. I provide all the needed files on the "cryptdb-lib" folder, but you may need to recompile the libraries if you have a different architecture. I provide instructions on what I did below.
 
@@ -30,6 +30,7 @@ sudo apt-get install libgmp3-dev libtool libtool-bin
 
 - Transfer the file to the server and extract it. Then it's compile time:
 
+```bash
 gunzip ntl-5.5.tar.gz
 tar xf ntl-5.5.tar
 cd ntl-5.5/src
@@ -37,9 +38,9 @@ cd ntl-5.5/src
 make
 make check
 sudo make install
-
-- cd to /usr/lib and create a static link with the 5.4.2 version in the filename (even if it's another version)
+#create a static link with the 5.4.2 version in the filename (even if it's another version)
+cd /usr/lib
 sudo ln -s libntl.so libntl-5.4.2.so
-
+```
 
 Then you can try and run CryptDB's proxy with it's backend address pointing to the cloud's ip. Hope it works!

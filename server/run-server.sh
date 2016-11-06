@@ -1,16 +1,16 @@
 #!/bin/bash
 #set this to the server base folder (full path)
-export BASE_DIR=/home/pepper/apdc/server
+export BASE_DIR=/server #home/pepper/apdc
 
 #for the attestation module - to generate the hashes
 export CBIR_LOCATION=$BASE_DIR/cbir
 export MYSQL_LOCATION=/usr/bin/mysql
 
 #for the cbir server (full path)
-export HOME_DIR_CBIR=$CBIR_LOCATION
+export HOME_DIR_CBIR=$CBIR_LOCATION/
 
 #to run the tpm software
-export TPM_PATH=$BASE_DIR + /attestation_tpm/tpm_data
+export TPM_PATH=$BASE_DIR/attestation_tpm/tpm_data
 
 #start daemons for attestation
 cd run-scripts
@@ -21,6 +21,7 @@ cd ..
 #start the attestation dispatcher
 cd attestation_tpm
 ./dispatcher -w &
+sudo ./tpm-first-setup.sh
 sleep 1
 cd ..
 
@@ -28,3 +29,9 @@ cd ..
 cd run-scripts
 ./run-cbir.sh &
 cd ..
+
+#keep alive
+while true
+do
+	sleep 10
+done

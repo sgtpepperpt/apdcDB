@@ -1,6 +1,7 @@
 #include<stdio.h>
 #include<string.h>
 #include<stdlib.h>
+//#include <unistd.h>
 
 #include <ctime>
 #include <iostream>
@@ -18,21 +19,33 @@ using namespace std;
 
 const int DEFAULT_LISTENER_PORT = 7868;
 
-const string MYSQL_HASH_COMM	= string("sha1sum ") + getenv("MYSQL_LOCATION");
-const string CBIR_HASH_COMM		= string("sha1sum ") + getenv("CBIR_LOCATION") + string("/* | sha1sum");
-
-int main(int argc,char **argv){
+int main(int argc,char **argv){	cout<<"he";
 	TSS_HCONTEXT	hContext;
 	TSS_HTPM	hTPM;
 	TSS_RESULT	result;
 	BYTE		wks[2];
+	cout<<"he";
+	
+	//check for environment variables
+	if(!getenv("CBIR_LOCATION")){
+		perror("Environment variable CBIR_LOCATION not set!");
+		exit(1);
+	}
+	if(!getenv("MYSQL_LOCATION")){
+		perror("Environment variable MYSQL_LOCATION not set!");
+		exit(1);
+	}
+	
+	const string MYSQL_HASH_COMM = string("sha1sum ") + getenv("MYSQL_LOCATION");
+	const string CBIR_HASH_COMM = string("sha1sum ") + getenv("CBIR_LOCATION") + string("/* | sha1sum");
 
+	
 	memset(wks, 0, 20);
 /*
 	system("/etc/init.d/mysql stop");	
 	printf("MySQL exited!\n");
 	*/
-	
+	cout<<"llo"<<endl;
 	result = Tspi_Context_Create(&hContext);
 	DBG("Create Context", result);
 	
@@ -161,32 +174,49 @@ int socks(){
     	//process message
     	std::vector<char> result;
     	if(request.find("quote") == 0){
-    		result = readFile("data/tmp/pcrvals");
-    		result.push_back('\n');
-    		result.push_back('\n');
+    		//result = readFile("data/tmp/pcrvals");
+    		//result.push_back('\n');
+    		//result.push_back('\n');
     		
-    		std::vector<char> quote = processQuoteRequest(request);
-    		int sz = quote.size();
-    		BYTE* buf = (unsigned char*)quote.data();
-    		string res = base64_encode(buf, sz);
+    		result = processQuoteRequest(request);
+    		int sz = result.size();
+    		BYTE* buf = (unsigned char*)result.data();
+    		cout << endl<<sizeof(result.data()) << "SIZE"<<endl;
+    		//string res = base64_encode(buf, sz);
     		
-    		for(unsigned int k = 0; k < res.size(); k++)
-    			result.push_back(res.at(k));	
+    		/*for(unsigned int k = 0; k < res.size(); k++)
+    			result.push_back(res.at(k));	*/
     	}
-    	
+    /*	FILE *write_ptr;
+
+		write_ptr = fopen("quote2","wb");  // w for write, b for binary
+		fwrite(result.data(),result.size(),1,write_ptr); // write 10 bytes from our buffer
+		fclose(write_ptr);*/
     	/*cout<<"%%"<<endl<<endl<<"%%"<<endl<<result.size()<<endl;
     	for(int as = 0; as<result.size(); as++)
     		cout << result.at(as);*/
     		
+   printf("-------------------\n");
+
     	char * buffer = (char*) malloc(result.size() * sizeof(char));
-    	for(unsigned int i = 0; i < result.size(); i++)
+    	for(unsigned int i = 0; i < result.size(); i++){
     		buffer[i] = result.at(i);
-    	
+    		printf("%d ", buffer[i]);
+    		}
+ printf("-------------------\n");
     	//answer to client
-    	char to_client[10 + result.size()];
-    	sprintf(to_client, "%010zu%s", result.size(), buffer);
+    	char to_client[10];
+    	sprintf(to_client, "%010zu", result.size());
     	
-    	write(client_sock, to_client, sizeof(to_client));
+    	char tmp[10 + result.size()];
+    	for(int i = 0; i < 10; i++)
+    		tmp[i] = to_client[i];
+    		
+    	for(int i = 10; i < 10 + result.size(); i++)
+    		tmp[i] = buffer[i-10];
+    	
+    	
+    	write(client_sock, tmp, sizeof(tmp));
     	close(client_sock);
     	printf("size: %zu", sizeof(to_client));
     }

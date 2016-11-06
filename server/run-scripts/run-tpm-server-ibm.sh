@@ -2,7 +2,7 @@
 
 #should be defined in calling script ../run-server.sh anyway
 if [ -z ${TPM_PATH+x} ]; then
-	echo "ERROR: HOME_DIR_CBIR needs to be set!" && exit 1
+	echo "ERROR: TPM_PATH needs to be set!" && exit 1
 fi
 
 #for the server
@@ -13,9 +13,10 @@ export TPM_PORT=7869
 export TPM_SERVER_NAME=localhost
 export TPM_SERVER_PORT=$TPM_PORT
 
-fuser -k $TPM_PORT/tcp
+kill -9 $(lsof -t -i:$TPM_PORT)
+#fuser -k $TPM_PORT/tcp
 
 cd ../libs/tpm/ibm/tpm
 ./tpm_server &
 sleep 2 #let it run fully
-tpmbios
+../libtpm/utils/tpmbios

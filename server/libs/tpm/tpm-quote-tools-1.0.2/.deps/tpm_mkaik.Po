@@ -21,14 +21,16 @@ tpm_mkaik.o: tpm_mkaik.c config.h \
  /usr/include/x86_64-linux-gnu/bits/posix_opt.h \
  /usr/include/x86_64-linux-gnu/bits/environments.h \
  /usr/include/x86_64-linux-gnu/bits/confname.h /usr/include/getopt.h \
- /usr/include/x86_64-linux-gnu/bits/unistd.h /usr/include/tss/tspi.h \
- /usr/include/tss/tss_defines.h /usr/include/tss/platform.h \
+ /usr/include/x86_64-linux-gnu/bits/unistd.h \
+ /usr/local/include/tss/tspi.h /usr/local/include/tss/tss_defines.h \
+ /usr/local/include/tss/platform.h \
  /usr/lib/gcc/x86_64-linux-gnu/4.6/include/stdint.h /usr/include/stdint.h \
- /usr/include/x86_64-linux-gnu/bits/wchar.h /usr/include/tss/compat11b.h \
- /usr/include/tss/tpm.h /usr/include/tss/tpm_error.h \
- /usr/include/tss/tpm_ordinal.h /usr/include/tss/tss_typedef.h \
- /usr/include/tss/tss_structs.h /usr/include/tss/tss_error.h \
- /usr/include/tss/tss_error_basics.h tpm_quote.h \
+ /usr/include/x86_64-linux-gnu/bits/wchar.h \
+ /usr/local/include/tss/compat11b.h /usr/local/include/tss/tpm.h \
+ /usr/local/include/tss/tpm_error.h /usr/local/include/tss/tpm_ordinal.h \
+ /usr/local/include/tss/tss_typedef.h \
+ /usr/local/include/tss/tss_structs.h /usr/local/include/tss/tss_error.h \
+ /usr/local/include/tss/tss_error_basics.h tpm_quote.h \
  /usr/include/openssl/ui.h /usr/include/openssl/crypto.h \
  /usr/include/x86_64-linux-gnu/bits/waitflags.h \
  /usr/include/x86_64-linux-gnu/bits/waitstatus.h \
@@ -113,11 +115,11 @@ config.h:
 
 /usr/include/x86_64-linux-gnu/bits/unistd.h:
 
-/usr/include/tss/tspi.h:
+/usr/local/include/tss/tspi.h:
 
-/usr/include/tss/tss_defines.h:
+/usr/local/include/tss/tss_defines.h:
 
-/usr/include/tss/platform.h:
+/usr/local/include/tss/platform.h:
 
 /usr/lib/gcc/x86_64-linux-gnu/4.6/include/stdint.h:
 
@@ -125,21 +127,21 @@ config.h:
 
 /usr/include/x86_64-linux-gnu/bits/wchar.h:
 
-/usr/include/tss/compat11b.h:
+/usr/local/include/tss/compat11b.h:
 
-/usr/include/tss/tpm.h:
+/usr/local/include/tss/tpm.h:
 
-/usr/include/tss/tpm_error.h:
+/usr/local/include/tss/tpm_error.h:
 
-/usr/include/tss/tpm_ordinal.h:
+/usr/local/include/tss/tpm_ordinal.h:
 
-/usr/include/tss/tss_typedef.h:
+/usr/local/include/tss/tss_typedef.h:
 
-/usr/include/tss/tss_structs.h:
+/usr/local/include/tss/tss_structs.h:
 
-/usr/include/tss/tss_error.h:
+/usr/local/include/tss/tss_error.h:
 
-/usr/include/tss/tss_error_basics.h:
+/usr/local/include/tss/tss_error_basics.h:
 
 tpm_quote.h:
 

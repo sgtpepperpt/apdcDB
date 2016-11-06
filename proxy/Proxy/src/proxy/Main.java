@@ -66,13 +66,13 @@ public class Main {
 		}
 
 		Security.addProvider(new BouncyCastleProvider());
-		AttestationModule atm = new AttestationModule("localhost", 7868);
+		AttestationModule atm = new AttestationModule("172.17.0.1", 7868);
 		atm.verifyServers();
 		/*
 		 * Dispatcher d = new Dispatcher(isEncrypted, isCloud);
 		 * d.listenForRequests();
 		 */
-/*
+
 		PrintStream ps = new PrintStream("test");
 		for (int k = 0; k < 10; k++) {
 			ps.println("TEST " + k);
@@ -99,6 +99,6 @@ public class Main {
 			}
 			ps.println("-------------------------------------------------");
 		}
-		ps.close();*/
+		ps.close();
 	}
 }

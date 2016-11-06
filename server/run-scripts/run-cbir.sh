@@ -11,5 +11,7 @@ if [ -z ${HOME_DIR_CBIR+x} ]; then
 	echo "ERROR: HOME_DIR_CBIR needs to be set!" && exit 1
 fi
 
-fuser -k 9978/tcp
+kill -9 $(lsof -t -i:9978)
+#fuser -k 9978/tcp
+
 ./Server MIE

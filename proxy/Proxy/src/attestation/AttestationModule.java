@@ -6,11 +6,7 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.net.Socket;
-import java.net.UnknownHostException;
-import java.util.Arrays;
 import java.util.Random;
-
-import javax.xml.bind.DatatypeConverter;
 
 import proxy.Main;
 import proxy.Util;
@@ -22,8 +18,8 @@ public class AttestationModule {
 	private final int port;
 
 	public AttestationModule(String host, int port) {
-		this.host	= host;
-		this.port	= port;
+		this.host = host;
+		this.port = port;
 	}
 
 	public boolean verifyServers() throws TpmAttestationException {
@@ -38,15 +34,11 @@ public class AttestationModule {
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
-			//	System.out.println("FROM SERVER: " + buffer.length);
-		} while(buffer.length < 256);
-		
-		String pcr = new String(buffer).substring(0, 87);
-		String base64Quote = new String(Arrays.copyOfRange(buffer, 90, buffer.length));
-		
+			// System.out.println("FROM SERVER: " + buffer.length);
+		} while (buffer.length < 256);
+
 		// write generated nonce and received quote to files
-		Util.writeFile(Main.TMP_DIR + "quote", DatatypeConverter.parseBase64Binary(base64Quote));
-		Util.writeFile(Main.TMP_DIR + "pcrvals", pcr.getBytes());
+		Util.writeFile(Main.TMP_DIR + "quote", buffer);
 		Util.writeFile(Main.TMP_DIR + "nonce", nonce.getBytes());
 
 		return runTpmVerify();
@@ -62,27 +54,29 @@ public class AttestationModule {
 			// write request to server
 			os.write(String.format("%010d", request.length()).getBytes());
 			os.write(request.getBytes());
-			//System.out.println(String.format("%010d", request.length()) + "\n" + request);
+			// System.out.println(String.format("%010d", request.length()) +
+			// "\n" + request);
 
-			//first get the size of the message to come
-			byte [] bSize = new byte[10];
+			// first get the size of the message to come
+			byte[] bSize = new byte[10];
 			is.read(bSize);
 			int size = Integer.valueOf(new String(bSize));
 
-			//start getting the message, with specified "size"
+			// start getting the message, with specified "size"
 			int read = 0;
 
-			byte [] buffer = new byte[size]; //tmp buffer, max size is total size
-			while(read < size){
+			byte[] buffer = new byte[size]; // tmp buffer, max size is total
+											// size
+			while (read < size) {
 				int tmpRead = is.read(buffer, read, size);
-				if(tmpRead == -1)
+				if (tmpRead == -1)
 					break;
 
 				read += tmpRead;
 			}
 
 			socket.close();
-			return buffer;	
+			return buffer;
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -92,7 +86,8 @@ public class AttestationModule {
 
 	private boolean runTpmVerify() throws TpmAttestationException {
 		try {
-			ProcessBuilder builder = new ProcessBuilder("tpm_verifyquote", Main.DATA_DIR + "pubkey", Main.DATA_DIR + "hash", Main.TMP_DIR + "nonce", Main.TMP_DIR + "quote");
+			ProcessBuilder builder = new ProcessBuilder("tpm_verifyquote", Main.DATA_DIR + "pubkey",
+					Main.DATA_DIR + "hash", Main.TMP_DIR + "nonce", Main.TMP_DIR + "quote");
 			builder.redirectErrorStream(true);
 
 			Process process;
@@ -105,30 +100,26 @@ public class AttestationModule {
 			while ((line = br.readLine()) != null)
 				result += line + "\n";
 
-			String pcrExpected = new String(Util.readFile(Main.DATA_DIR + "pcrvals"));
-			String pcrReceived = new String(Util.readFile(Main.TMP_DIR + "pcrvals"));
-			
-			boolean isValidQuote = true;//result.length() == 0;//may not work if quote contains a null-byte
-			boolean isValidPcrVal = pcrExpected.equals(pcrReceived);
-			
-			if(isValidPcrVal && isValidQuote)
+			boolean isValidQuote = result.length() == 0;
+
+			if (isValidQuote)
 				return true;
-			
+
 			System.err.println("Error verifying quote:");
 			System.err.println(result);
 			throw new TpmAttestationException();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		
+
 		return false;
 	}
 
 	private static String generateNonce(int size) {
 		final Random r = new Random();
-		char [] nonce = new char[size];
+		char[] nonce = new char[size];
 
-		for(int i = 0; i < size; i++){
+		for (int i = 0; i < size; i++) {
 			int index = r.nextInt(CHARACTERS.length);
 			nonce[i] = CHARACTERS[index];
 		}

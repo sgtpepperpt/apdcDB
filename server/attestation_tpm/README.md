@@ -9,7 +9,7 @@ This process is done automatically by the _3-tpm-first-setup.sh_ script in the _
 >tpm_mkuuid uuid
 >tpm_mkaik -z blob-aik pubkey
 >tpm_loadkey blob-aik uuid
->tpm_getpcrhash uuid hash pcrvals 10 11
+>tpm_getpcrhash uuid hash pcrvals 10 11 #at this point, the PCR registers must contain the desired value
 
 #USAGE
 **server-side: generate quote (this is what the dispatcher does) and send it to the requester**
