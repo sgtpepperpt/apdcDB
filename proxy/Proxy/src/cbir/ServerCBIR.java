@@ -12,18 +12,21 @@ import cbir.Connector.SearchResult;
 import mie.utils.CBIRCipherText;
 import mie.utils.UnrecognizedFormatException;
 import proxy.Util;
+import util.ProxyConfigs;
 
 public class ServerCBIR {
 	private Connector server;
 	private Crypto crypto;
+	private ProxyConfigs config;
 
-	public ServerCBIR(String address, int port) throws NoSuchAlgorithmException, NoSuchPaddingException, IOException {
+	public ServerCBIR(ProxyConfigs config, String address, int port) throws NoSuchAlgorithmException, NoSuchPaddingException, IOException {
 		this.server = new Connector(address, port);
-		this.crypto = new Crypto();
+		this.crypto = new Crypto(config);
+		this.config = config;
 	}
 	
 	public void uploadOne(int id) throws UnknownHostException, IOException, UnrecognizedFormatException {
-		byte[] img = Util.readImg(id);
+		byte[] img = Util.readImg(id, config);
 		byte[] cimg = crypto.encryptImg(img);
 		CBIRCipherText c = new CBIRCipherText(cimg);
 		server.addImg(id, c);
@@ -31,7 +34,7 @@ public class ServerCBIR {
 	
 	public void indexAll() throws UnknownHostException, IOException, UnrecognizedFormatException {
 		for(int id = 0; id < 1000; id++){
-			byte[] img = Util.readImg(id);
+			byte[] img = Util.readImg(id, config);
 			byte[] cimg = crypto.encryptImg(img);
 			CBIRCipherText c = new CBIRCipherText(cimg);
 			server.addImg(id, c);
@@ -48,7 +51,7 @@ public class ServerCBIR {
 		System.out.println("searching for: "+k);
 
 		try{
-			byte[] img = Util.readImg(k);
+			byte[] img = Util.readImg(k, config);
 			byte[] simg = crypto.getCBIRImgFeatures(img);
 			CBIRCipherText c = new CBIRCipherText(simg);
 

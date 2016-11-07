@@ -24,7 +24,7 @@ import javax.crypto.spec.IvParameterSpec;
 import mie.crypto.CBIRDCipherKeySpec;
 import mie.crypto.CBIRDCipherParameterSpec;
 import mie.crypto.CBIRDParameterSpec;
-import proxy.Main;
+import util.ProxyConfigs;
 
 public class Crypto {
 	
@@ -32,9 +32,12 @@ public class Crypto {
 	
 	private Key dkey;
 	private CBIRDCipherParameterSpec cbirdParams;
+
+	private ProxyConfigs config;
 	
-	Crypto() throws IOException, NoSuchAlgorithmException, NoSuchPaddingException {
-		dkey = setup(Main.IMG_KEY_FILE, CBIRD_CIPHER);
+	Crypto(ProxyConfigs config) throws IOException, NoSuchAlgorithmException, NoSuchPaddingException {
+		this.config = config;
+		dkey = setup(config.IMG_KEY_FILE, CBIRD_CIPHER);
 	}
 	
 	private Key setup(String fileName, String transformation) throws IOException, NoSuchAlgorithmException, NoSuchPaddingException{
@@ -68,7 +71,7 @@ public class Crypto {
 				out.close();
 			}
 		}
-		file = new File(Main.IV_FILE);
+		file = new File(config.IV_FILE);
 		byte[] iv_bytes;
 		if(file.exists()){
 			///try to read iv from file

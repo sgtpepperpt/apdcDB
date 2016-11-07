@@ -8,6 +8,8 @@ import java.nio.file.StandardOpenOption;
 
 import javax.xml.bind.DatatypeConverter;
 
+import util.ProxyConfigs;
+
 public class Util {
 	static boolean compareArrays(byte[] array1, byte[] array2) {
 		if (array1 != null && array2 != null) {
@@ -34,12 +36,12 @@ public class Util {
 		return DatatypeConverter.parseBase64Binary(arr);
 	}
 
-	public static byte[] readImg(int id) {
-		return Util.readFile(Main.DATASET_DIRECTORY + "flickr_imgs/im" + id + ".jpg");
+	public static byte[] readImg(int id, ProxyConfigs config) {
+		return Util.readFile(config.DATASET_DIRECTORY + "flickr_imgs/im" + id + ".jpg");
 	}
 
-	public static String readTag(int id){
-		return new String(Util.readFile(Main.DATASET_DIRECTORY + "flickr_tags/tags" + id + ".txt")).replace("\r\n", " ").trim();
+	public static String readTag(int id, ProxyConfigs config){
+		return new String(Util.readFile(config.DATASET_DIRECTORY + "flickr_tags/tags" + id + ".txt")).replace("\r\n", " ").trim();
 	}
 
 	public static byte[] readFile(String fileName){

@@ -12,7 +12,7 @@ import base64
 import socket, ssl, errno, json
 from texttable import Texttable
 
-TCP_IP = '127.0.0.1'
+TCP_IP = '127.0.0.1' #proxy ip
 TCP_PORT = 5482
 
 file_stat = None

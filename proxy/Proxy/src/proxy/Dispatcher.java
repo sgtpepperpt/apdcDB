@@ -21,27 +21,31 @@ import attestation.TpmAttestationException;
 import cbir.ServerCBIR;
 import cryptDB.Proxy;
 import cryptDB.ProxyConnector;
+import util.ProxyConfigs;
 
 public class Dispatcher {
+	private ProxyConfigs config;
 	private Proxy proxy;
 	private ServerCBIR cbir;
 	private AttestationModule tpm;
 
 	//private List<Session> connected;
 
-	public Dispatcher(boolean isEncrypted, boolean isCloud) throws IOException, NoSuchAlgorithmException, NoSuchPaddingException {
+	public Dispatcher(ProxyConfigs config) throws IOException, NoSuchAlgorithmException, NoSuchPaddingException {
+		this.config = config;
+		
 		String host;
-		if(isCloud)
-			host = Main.CLOUD_HOST;
+		if(config.isCloud)
+			host = config.CLOUD_HOST;
 		else
-			host = Main.LOCAL_NETWORK_HOST;//localhostAddress();
+			host = config.LOCAL_NETWORK_HOST;//localhostAddress();
 
-		proxy		= new ProxyConnector(isEncrypted, isCloud, host);
+		proxy		= new ProxyConnector(config, host);
 
 		//ServerDataLoader.initializeCryptDB(proxy); //must be done at first run
 
-		cbir		= new ServerCBIR(host, Main.DEFAULT_SERVER_CBIR_PORT);
-		tpm			= new AttestationModule(host, Main.DEFAULT_SERVER_ATTESTATION_PORT);
+		cbir		= new ServerCBIR(config, host, Main.DEFAULT_SERVER_CBIR_PORT);
+		tpm			= new AttestationModule(config, host, Main.DEFAULT_SERVER_ATTESTATION_PORT);
 
 		//connected	= new ArrayList<Session>();
 	}
@@ -130,7 +134,7 @@ public class Dispatcher {
 		case "LOGIN":
 			String[] data = query.split("\\s+");
 
-			if(data.length != 4 || !data[2].equals(Main.PROXY_LOGIN_USERNAME) || !data[3].equals(Main.PROXY_LOGIN_PASSWORD))
+			if(data.length != 4 || !data[2].equals(config.PROXY_LOGIN_USERNAME) || !data[3].equals(config.PROXY_LOGIN_PASSWORD))
 				json.put("success", false);
 			else {
 				json.put("success", checkServers());

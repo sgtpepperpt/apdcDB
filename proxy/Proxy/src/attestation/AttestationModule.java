@@ -8,8 +8,8 @@ import java.io.OutputStream;
 import java.net.Socket;
 import java.util.Random;
 
-import proxy.Main;
 import proxy.Util;
+import util.ProxyConfigs;
 
 public class AttestationModule {
 	private static final char[] CHARACTERS = "abcdefghijklmnopqrstuvwxyz0123456789".toCharArray();
@@ -17,7 +17,10 @@ public class AttestationModule {
 	private final String host;
 	private final int port;
 
-	public AttestationModule(String host, int port) {
+	private ProxyConfigs config;
+
+	public AttestationModule(ProxyConfigs config, String host, int port) {
+		this.config = config;
 		this.host = host;
 		this.port = port;
 	}
@@ -38,8 +41,8 @@ public class AttestationModule {
 		} while (buffer.length < 256);
 
 		// write generated nonce and received quote to files
-		Util.writeFile(Main.TMP_DIR + "quote", buffer);
-		Util.writeFile(Main.TMP_DIR + "nonce", nonce.getBytes());
+		Util.writeFile(config.TMP_DIR + "quote", buffer);
+		Util.writeFile(config.TMP_DIR + "nonce", nonce.getBytes());
 
 		return runTpmVerify();
 	}
@@ -86,8 +89,8 @@ public class AttestationModule {
 
 	private boolean runTpmVerify() throws TpmAttestationException {
 		try {
-			ProcessBuilder builder = new ProcessBuilder("tpm_verifyquote", Main.DATA_DIR + "pubkey",
-					Main.DATA_DIR + "hash", Main.TMP_DIR + "nonce", Main.TMP_DIR + "quote");
+			ProcessBuilder builder = new ProcessBuilder("tpm_verifyquote", config.DATA_DIR + "pubkey",
+					config.DATA_DIR + "hash", config.TMP_DIR + "nonce", config.TMP_DIR + "quote");
 			builder.redirectErrorStream(true);
 
 			Process process;
