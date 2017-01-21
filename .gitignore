@@ -2,7 +2,8 @@
 datasets
 google-cloud
 
-proxy/opencv*
+proxy/libs/opencv*
+proxy/libs/cryptdb
 proxy/cryptdb
 
 server/cbir/Data/*
@@ -11,7 +12,7 @@ server/libs/cbir/opencv-3.0.0.zip
 server/docker-tmp
 
 .auditing-0
-server/libs/tpm/ibm/tpm/lolo
+proxy/opencv-2.4.10
 
 # Created by https://www.gitignore.io/api/c,c++,java,android,objective-c
 ### C ###

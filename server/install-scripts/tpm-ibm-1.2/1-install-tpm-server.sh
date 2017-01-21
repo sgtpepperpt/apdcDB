@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #for the server
-export TPM_PATH=/server/attestation_tpm/tpm_data #/home/pepper/apdc
+export TPM_PATH=/server/storage/tpm #/home/pepper/apdc
 export TPM_PORT=7869
 
 #for the client (tpmbios)
@@ -12,7 +12,7 @@ export TPM_SERVER_PORT=$TPM_PORT
 kill -9 $(lsof -t -i:$TPM_PORT)
 
 #delete older tpm configurations
-cd ../../attestation_tpm/tpm_data/
+cd ../../storage/tpm/
 rm -rf *.permall
 cd -
 

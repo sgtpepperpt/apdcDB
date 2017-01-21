@@ -1,0 +1,24 @@
+#THESE ARE SOME NOTES PROVIDED AS LEGACY, IF YOU NEED HELP
+
+sudo apt-get install ant
+mkdir build
+cd build
+
+If cmake says it can't find the JNI, try running it with sudo su, and making:
+export JAVA_HOME=/usr/lib/jvm/java-7-openjdk-amd64
+
+And then:
+cmake -dwith_cuda=off -dwith_ffmpeg=off -DCMAKE_INSTALL_PREFIX=/usr/local/opencv2410 .. #install prefix needed if installing two opencv's in the same machine (like server and proxy...)
+
+make
+sudo make install
+
+This one worked by finding each file individually. Can't hurt to try if the above doesn't:
+
+sudo cmake -dwith_cuda=off -dwith_ffmpeg=off 			\
+-DJAVA_AWT_LIBRARY=`dirname \`locate -l1 libawt.so\`` 	\
+-DJAVA_INCLUDE_PATH=`dirname \`locate -l1 jni.h\`` 		\
+-DJAVA_AWT_INCLUDE_PATH=`dirname \`locate -l1 jawt.h\`` \
+-DJAVA_INCLUDE_PATH2=`dirname \`locate -l1 jni_md.h\`` 	\
+-DCMAKE_INSTALL_PREFIX=/usr/local/opencv2410 			\
+..

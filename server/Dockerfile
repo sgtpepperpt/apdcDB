@@ -43,6 +43,6 @@ WORKDIR ..
 #cbir, attestation, mysql
 EXPOSE 9978
 EXPOSE 7868
-#EXPOSE 3306
+EXPOSE 3306
 
-ENTRYPOINT ./run-server.sh
+#ENTRYPOINT ./run-server.sh

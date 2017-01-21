@@ -7,10 +7,25 @@ export CBIR_LOCATION=$BASE_DIR/cbir
 export MYSQL_LOCATION=/usr/bin/mysql
 
 #for the cbir server (full path)
-export HOME_DIR_CBIR=$CBIR_LOCATION/
+export HOME_DIR_CBIR=$BASE_DIR/storage/cbir/
 
 #to run the tpm software
-export TPM_PATH=$BASE_DIR/attestation_tpm/tpm_data
+export TPM_PATH=$BASE_DIR/storage/tpm
+
+FIRST_CONFIG=false
+
+#process arguments
+for i in "$@"
+do
+case $i in
+    --f|--first)
+    FIRST_CONFIG=true
+    ;;
+    *)
+    echo "Usage: run_server.sh [-f|--first]\n-f\tFirst configuration (create and setup TPM)"
+    ;;
+esac
+done
 
 #start daemons for attestation
 cd run-scripts
@@ -21,9 +36,14 @@ cd ..
 #start the attestation dispatcher
 cd attestation_tpm
 ./dispatcher -w &
-sudo ./tpm-first-setup.sh
 sleep 1
-cd ..
+
+if [ $FIRST_CONFIG ]; then
+	sudo ./tpm-first-setup.sh
+	sleep 2	
+fi
+
+cd ..        
 
 #start the cbir server
 cd run-scripts

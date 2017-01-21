@@ -1,8 +1,8 @@
 #!/bin/bash
 
 #start tpm services
-cd ../../run-scripts
-export TPM_PATH=/server/attestation_tpm/tpm_data
+cd ../run-scripts
+export TPM_PATH=/server/storage/tpm
 ./run-tpm-server-ibm.sh
 ./run-tpm-tcsd-ibm.sh
 

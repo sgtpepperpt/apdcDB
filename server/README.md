@@ -34,7 +34,7 @@ For the **Attestation Module** you will need the following libraries (included):
 * [Trousers 0.3.7](https://sourceforge.net/projects/trousers/files/trousers/)
 * [TPM-Tools 1.3.3](https://sourceforge.net/projects/trousers/files/tpm-tools/)
 * [TPM Quote Tools 1.0.2](https://sourceforge.net/projects/tpmquotetools/)
-* ~~[TPM-Emulator](https://github.com/PeterHuewe/tpm-emulator)~~ _Note:_ Due to issues with the Docker deployment, we've deprecated this library in favour of IBM's. However, installation scripts and tips on TPM-Emulator's usage are included if you're interested.
+* ~~[TPM-Emulator](https://github.com/PeterHuewe/tpm-emulator)~~ _Note:_ Due to issues with the Docker deployment, we've deprecated this library in favour of IBM's. However, installation scripts and tips on TPM-Emulator's usage are included as legacy if you're interested.
 
 
 For the **CBIR Server** you will need the to download OpenCV 3.0.0 and extract it to _./libs/cbir/opencv-3.0.0_. You can find it on [OpenCV's official website](http://opencv.org/downloads.html). You don't need to compile it, that's dealt by the installation scripts. If you have an error with _AVCodecID_, check (http://stackoverflow.com/questions/31663498/opencv-3-0-0-make-error-with-ffmpeg).

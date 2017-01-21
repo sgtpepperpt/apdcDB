@@ -1,7 +1,8 @@
 cbir/Data/Server/MIE/*
 cbir/opencv-3.0.0
 attestation_tpm/data/*
-libs/tpm/tpm-emulator-master
+libs/tpm/legacy
 libs/tpm/tpm-quote-tools-1.0.2/*.o
 libs/cbir/*.zip
+*legacy/*
 *~
