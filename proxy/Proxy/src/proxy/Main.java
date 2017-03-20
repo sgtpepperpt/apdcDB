@@ -28,6 +28,7 @@ public class Main {
 
 		boolean isEncrypted = true;
 		boolean isCloud = true;
+		boolean forceLogin = true;
 
 		boolean attestMode = false;
 		boolean cbirMode = false;
@@ -42,6 +43,9 @@ public class Main {
 			case "-l":
 				isCloud = false;
 				break;
+			case "-a":
+				//forceLogin = false;
+				break;
 			case "--attest":
 				attestMode = true;
 				tmpHost = args[i + 1];
@@ -52,7 +56,7 @@ public class Main {
 			}
 		}
 
-		ProxyConfigs config = new ProxyConfigs("config.properties", isEncrypted, isCloud);
+		ProxyConfigs config = new ProxyConfigs("config.properties", isEncrypted, isCloud, forceLogin);
 
 		if (attestMode) {
 			AttestationModule atm = new AttestationModule(config, tmpHost, DEFAULT_SERVER_ATTESTATION_PORT);

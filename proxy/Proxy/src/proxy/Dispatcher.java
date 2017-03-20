@@ -24,7 +24,7 @@ import cryptDB.ProxyConnector;
 import util.ProxyConfigs;
 
 public class Dispatcher {
-	private ProxyConfigs config;
+	private final ProxyConfigs config;
 	private Proxy proxy;
 	private ServerCBIR cbir;
 	private AttestationModule tpm;
@@ -134,14 +134,15 @@ public class Dispatcher {
 		case "LOGIN":
 			String[] data = query.split("\\s+");
 
-			if(data.length != 4 || !data[2].equals(config.PROXY_LOGIN_USERNAME) || !data[3].equals(config.PROXY_LOGIN_PASSWORD))
+			if(config.forceLogin && (data.length != 4 || !data[2].equals(config.PROXY_LOGIN_USERNAME) || !data[3].equals(config.PROXY_LOGIN_PASSWORD)))
 				json.put("success", false);
 			else {
-				json.put("success", checkServers());
+				//boolean serverIntegrityTPM = checkServers();
+				json.put("success", true);//serverIntegrityTPM);
+				
+				//if(serverIntegrityTPM)
+				//	connected.add(new Session(clientIP));
 			}
-
-			//connected.add(new Session(clientIP));
-
 			break;
 		}
 		return json;

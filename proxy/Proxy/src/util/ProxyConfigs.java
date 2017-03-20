@@ -35,11 +35,12 @@ public class ProxyConfigs {
 	public final String PROXY_PORT;
 
 	//from cmd arguments
-	public final boolean isEncrypted, isCloud;
+	public final boolean isEncrypted, isCloud, forceLogin;
 	
-	public ProxyConfigs(String file, boolean isEncrypted, boolean isCloud) throws ConfigurationException {
+	public ProxyConfigs(String file, boolean isEncrypted, boolean isCloud, boolean forceLogin) throws ConfigurationException {
 		this.isEncrypted = isEncrypted;
 		this.isCloud = isCloud;
+		this.forceLogin = forceLogin;
 		
 		final Configuration config = new Configurations().properties(file);
 		

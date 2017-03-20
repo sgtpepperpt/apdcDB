@@ -1,0 +1,187 @@
+----------------- Initialization -------------------
+numWarehouses
+Setting the number of warehouses to: 10
+10
+driver=com.mysql.jdbc.Driver
+conn=jdbc:mysql://127.0.0.1:3307/tpcc
+user=root
+password=******
+Truncating 'item' ...
+Error: Bad Query: [TRUNCATE TABLE item]
+Error Data: don't know how to prepare command 8
+FILE: main/rewrite_main.cc
+LINE: 1380
+
+Truncating 'warehouse' ...
+Error: Bad Query: [TRUNCATE TABLE warehouse]
+Error Data: don't know how to prepare command 8
+FILE: main/rewrite_main.cc
+LINE: 1380
+
+Truncating 'stock' ...
+Error: Bad Query: [TRUNCATE TABLE stock]
+Error Data: don't know how to prepare command 8
+FILE: main/rewrite_main.cc
+LINE: 1380
+
+Truncating 'district' ...
+Error: Bad Query: [TRUNCATE TABLE district]
+Error Data: don't know how to prepare command 8
+FILE: main/rewrite_main.cc
+LINE: 1380
+
+Truncating 'customer' ...
+Error: Bad Query: [TRUNCATE TABLE customer]
+Error Data: don't know how to prepare command 8
+FILE: main/rewrite_main.cc
+LINE: 1380
+
+Truncating 'history' ...
+Error: Bad Query: [TRUNCATE TABLE history]
+Error Data: don't know how to prepare command 8
+FILE: main/rewrite_main.cc
+LINE: 1380
+
+Truncating 'oorder' ...
+Error: Bad Query: [TRUNCATE TABLE oorder]
+Error Data: don't know how to prepare command 8
+FILE: main/rewrite_main.cc
+LINE: 1380
+
+Truncating 'order_line' ...
+Error: Bad Query: [TRUNCATE TABLE order_line]
+Error Data: don't know how to prepare command 8
+FILE: main/rewrite_main.cc
+LINE: 1380
+
+Truncating 'new_order' ...
+Error: Bad Query: [TRUNCATE TABLE new_order]
+Error Data: don't know how to prepare command 8
+FILE: main/rewrite_main.cc
+LINE: 1380
+
+------------- LoadData Start Date = Fri Jan 27 05:02:08 WET 2017-------------
+
+Start Whse Load for 10 Whses @ Fri Jan 27 05:02:08 WET 2017 ...
+Elasped Time(ms): 0.965
+End Whse Load @  Fri Jan 27 05:02:09 WET 2017
+
+Start Item Load for 100000 Items @ Fri Jan 27 05:02:09 WET 2017 ...
+  Elasped Time(ms): 0.076       Writing record 1000 of 100000
+  Elasped Time(ms): 50.907      Writing record 2000 of 100000
+  Elasped Time(ms): 48.014      Writing record 3000 of 100000
+  Elasped Time(ms): 46.512      Writing record 4000 of 100000
+  Elasped Time(ms): 45.71       Writing record 5000 of 100000
+  Elasped Time(ms): 56.698      Writing record 6000 of 100000
+  Elasped Time(ms): 44.073      Writing record 7000 of 100000
+  Elasped Time(ms): 43.876      Writing record 8000 of 100000
+  Elasped Time(ms): 43.379      Writing record 9000 of 100000
+  Elasped Time(ms): 43.342      Writing record 10000 of 100000
+  Elasped Time(ms): 42.655      Writing record 11000 of 100000
+  Elasped Time(ms): 43.264      Writing record 12000 of 100000
+  Elasped Time(ms): 42.749      Writing record 13000 of 100000
+  Elasped Time(ms): 43.677      Writing record 14000 of 100000
+  Elasped Time(ms): 43.678      Writing record 15000 of 100000
+  Elasped Time(ms): 43.127      Writing record 16000 of 100000
+  Elasped Time(ms): 43.395      Writing record 17000 of 100000
+  Elasped Time(ms): 41.712      Writing record 18000 of 100000
+  Elasped Time(ms): 42.114      Writing record 19000 of 100000
+  Elasped Time(ms): 40.771      Writing record 20000 of 100000
+  Elasped Time(ms): 41.525      Writing record 21000 of 100000
+  Elasped Time(ms): 41.02       Writing record 22000 of 100000
+  Elasped Time(ms): 41.819      Writing record 23000 of 100000
+  Elasped Time(ms): 41.884      Writing record 24000 of 100000
+  Elasped Time(ms): 40.73       Writing record 25000 of 100000
+  Elasped Time(ms): 41.877      Writing record 26000 of 100000
+  Elasped Time(ms): 40.764      Writing record 27000 of 100000
+  Elasped Time(ms): 40.162      Writing record 28000 of 100000
+  Elasped Time(ms): 40.689      Writing record 29000 of 100000
+  Elasped Time(ms): 40.808      Writing record 30000 of 100000
+  Elasped Time(ms): 39.774      Writing record 31000 of 100000
+  Elasped Time(ms): 39.225      Writing record 32000 of 100000
+  Elasped Time(ms): 39.424      Writing record 33000 of 100000
+  Elasped Time(ms): 39.559      Writing record 34000 of 100000
+  Elasped Time(ms): 37.887      Writing record 35000 of 100000
+  Elasped Time(ms): 38.237      Writing record 36000 of 100000
+  Elasped Time(ms): 39.245      Writing record 37000 of 100000
+  Elasped Time(ms): 38.499      Writing record 38000 of 100000
+  Elasped Time(ms): 38.973      Writing record 39000 of 100000
+  Elasped Time(ms): 39.416      Writing record 40000 of 100000
+  Elasped Time(ms): 39.426      Writing record 41000 of 100000
+  Elasped Time(ms): 38.569      Writing record 42000 of 100000
+  Elasped Time(ms): 39.29       Writing record 43000 of 100000
+  Elasped Time(ms): 38.541      Writing record 44000 of 100000
+  Elasped Time(ms): 39.076      Writing record 45000 of 100000
+  Elasped Time(ms): 38.881      Writing record 46000 of 100000
+  Elasped Time(ms): 39.374      Writing record 47000 of 100000
+  Elasped Time(ms): 41.158      Writing record 48000 of 100000
+  Elasped Time(ms): 41.551      Writing record 49000 of 100000
+  Elasped Time(ms): 41.608      Writing record 50000 of 100000
+  Elasped Time(ms): 41.678      Writing record 51000 of 100000
+  Elasped Time(ms): 41.628      Writing record 52000 of 100000
+  Elasped Time(ms): 41.626      Writing record 53000 of 100000
+  Elasped Time(ms): 41.139      Writing record 54000 of 100000
+  Elasped Time(ms): 41.037      Writing record 55000 of 100000
+  Elasped Time(ms): 41.179      Writing record 56000 of 100000
+  Elasped Time(ms): 42.122      Writing record 57000 of 100000
+  Elasped Time(ms): 43.427      Writing record 58000 of 100000
+  Elasped Time(ms): 44.703      Writing record 59000 of 100000
+  Elasped Time(ms): 45.035      Writing record 60000 of 100000
+  Elasped Time(ms): 45.665      Writing record 61000 of 100000
+  Elasped Time(ms): 49.741      Writing record 62000 of 100000
+  Elasped Time(ms): 47.014      Writing record 63000 of 100000
+  Elasped Time(ms): 45.282      Writing record 64000 of 100000
+  Elasped Time(ms): 47.479      Writing record 65000 of 100000
+  Elasped Time(ms): 45.423      Writing record 66000 of 100000
+  Elasped Time(ms): 47.056      Writing record 67000 of 100000
+  Elasped Time(ms): 54.507      Writing record 68000 of 100000
+  Elasped Time(ms): 45.472      Writing record 69000 of 100000
+  Elasped Time(ms): 45.347      Writing record 70000 of 100000
+  Elasped Time(ms): 46.483      Writing record 71000 of 100000
+  Elasped Time(ms): 50.099      Writing record 72000 of 100000
+  Elasped Time(ms): 46.094      Writing record 73000 of 100000
+  Elasped Time(ms): 47.736      Writing record 74000 of 100000
+  Elasped Time(ms): 47.244      Writing record 75000 of 100000
+  Elasped Time(ms): 47.144      Writing record 76000 of 100000
+  Elasped Time(ms): 46.731      Writing record 77000 of 100000
+  Elasped Time(ms): 47.161      Writing record 78000 of 100000
+  Elasped Time(ms): 48.333      Writing record 79000 of 100000
+  Elasped Time(ms): 54.774      Writing record 80000 of 100000
+  Elasped Time(ms): 44.709      Writing record 81000 of 100000
+  Elasped Time(ms): 48.03       Writing record 82000 of 100000
+  Elasped Time(ms): 49.755      Writing record 83000 of 100000
+  Elasped Time(ms): 49.275      Writing record 84000 of 100000
+  Elasped Time(ms): 51.354      Writing record 85000 of 100000
+  Elasped Time(ms): 51.495      Writing record 86000 of 100000
+  Elasped Time(ms): 45.02       Writing record 87000 of 100000
+  Elasped Time(ms): 45.233      Writing record 88000 of 100000
+  Elasped Time(ms): 49.492      Writing record 89000 of 100000
+  Elasped Time(ms): 62.164      Writing record 90000 of 100000
+  Elasped Time(ms): 42.898      Writing record 91000 of 100000
+  Elasped Time(ms): 46.821      Writing record 92000 of 100000
+  Elasped Time(ms): 49.679      Writing record 93000 of 100000
+  Elasped Time(ms): 49.218      Writing record 94000 of 100000
+  Elasped Time(ms): 43.663      Writing record 95000 of 100000
+  Elasped Time(ms): 46.69       Writing record 96000 of 100000
+  Elasped Time(ms): 47.799      Writing record 97000 of 100000
+  Elasped Time(ms): 51.683      Writing record 98000 of 100000
+  Elasped Time(ms): 47.77       Writing record 99000 of 100000
+  Elasped Time(ms): 44.772      Writing record 100000 of 100000
+  Elasped Time(ms): 47.352      Writing record 100000 of 100000
+End Item Load @  Fri Jan 27 06:16:11 WET 2017
+
+Start Stock Load for 1000000 units @ Fri Jan 27 06:16:11 WET 2017 ...
+  Elasped Time(ms): 0.117       Writing record 1000 of 1000000
+  Elasped Time(ms): 131.822     Writing record 2000 of 1000000
+  Elasped Time(ms): 115.455     Writing record 3000 of 1000000
+  Elasped Time(ms): 113.232     Writing record 4000 of 1000000
+  Elasped Time(ms): 122.996     Writing record 5000 of 1000000
+  Elasped Time(ms): 104.574     Writing record 6000 of 1000000
+  Elasped Time(ms): 100.95      Writing record 7000 of 1000000
+  Elasped Time(ms): 102.694     Writing record 8000 of 1000000
+  Elasped Time(ms): 104.483     Writing record 9000 of 1000000
+  Elasped Time(ms): 100.948     Writing record 10000 of 1000000
+  Elasped Time(ms): 101.506     Writing record 11000 of 1000000
+  Elasped Time(ms): 97.779      Writing record 12000 of 1000000
+  Elasped Time(ms): 100.599     Writing record 13000 of 1000000
+  Elasped Time(ms): 107.952     Writing record 14000 of 1000000
