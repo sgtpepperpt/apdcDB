@@ -6,3 +6,5 @@ NOVA LINCS, FCT-UNL
 This system was developed as part of an ongoing research activity conducted at NOVA LINCS. Details of the system and the original paper on its design can be found on _doc_.
 
 The system is composed of a proxy, a server and two types of clients (which can be extended). More documentation on each component (including details of its deployment) can be found on the sub-folders.
+
+A new cryptographic implementation will be available in another repository.
